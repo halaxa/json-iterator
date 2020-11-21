@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+THIS_DIR=$(dirname $(readlink -f $0))
+docker build -t zephir "$THIS_DIR" # > /dev/null
+#docker run --rm --name zephir -it -v="$THIS_DIR":/project -w=/project -u=$(id -u):$(id -g) -e HOME=/tmp/home zephir "$@"
+docker run --rm --name zephir -it -v="$THIS_DIR":/project -w=/project -e HOME=/tmp/home zephir "$@"

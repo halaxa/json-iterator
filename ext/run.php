@@ -1,0 +1,3 @@
+<?php
+
+\JsonMachine\ExtLexer::hello();
